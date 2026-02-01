@@ -1,0 +1,7 @@
+<div style="display: flex; align-items: flex-start;">
+    <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" style="float: left; margin-right: 15px; max-width: 200px;">
+    <div style="overflow: auto;">
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+  

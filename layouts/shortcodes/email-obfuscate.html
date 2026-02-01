@@ -1,0 +1,15 @@
+<span id="email"></span>
+<script type="text/javascript">
+  (function() {
+    // Define the email address parts
+    var user = "{{ .Get "user" }}";
+    var domain = "{{ .Get "domain" }}";
+    var tld = "{{ .Get "tld" }}";
+
+    // Combine the parts into a complete email address
+    var email = user + "@" + domain + "." + tld;
+
+    // Display the email address in the span with id="email"
+    document.getElementById("email").innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+  })();
+</script>

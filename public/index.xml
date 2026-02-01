@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Antoni Kowalczuk</title>
+    <link>https://antonikowalczuk.com/</link>
+    <description>Recent content in Home on Antoni Kowalczuk</description>
+    <generator>Hugo -- 0.139.4</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://antonikowalczuk.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Time Management</title>
+      <link>https://antonikowalczuk.com/blog/time/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://antonikowalczuk.com/blog/time/</guid>
+      <description>&lt;p&gt;Recently I had a pleasure to give a talk in &lt;a href=&#34;https://sprintml.com/&#34;&gt;SprintML lab&lt;/a&gt;, where I do my PhD, about &lt;em&gt;time management and work-life balance&lt;/em&gt;. Ironically enough, I could not manage my presentation time, and not the full message was conveyed. I&amp;rsquo;ll try to compensate for it here.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: Keep a list of tasks, make notes, also calendar is useful.&lt;/p&gt;
+&lt;p&gt;All insights in this blog post are taken directly from the book &lt;a href=&#34;https://g.co/kgs/kCscQP1&#34;&gt;Getting Things Done (GTD)&lt;/a&gt;, by David Allen. Without any exaggeration, it changed my life. I aim to provide just a set of general ideas about what time management is really about and how to do it well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Privacy Attacks On Image AutoRegressive Models</title>
+      <link>https://antonikowalczuk.com/blog/priv_iar/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://antonikowalczuk.com/blog/priv_iar/</guid>
+      <description>&lt;div style=&#34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+&#34;&gt;
+  &lt;img src=&#34;../../files/priv_iar/ICML-logo.svg&#34; 
+       alt=&#34;ICML Logo&#34; 
+       style=&#34;height: 50px; width: auto; background-color: white;&#34; /&gt;
+  &lt;span style=&#34;
+    font-size: 40px; 
+    font-weight: bold; 
+    font-family: sans-serif; 
+  &#34;&gt;Accepted to ICML 2025 (Poster)&lt;/span&gt;
+&lt;/div&gt;
+&lt;center&gt;
+  &lt;strong&gt;Authors:&lt;/strong&gt;
+  &lt;a href=&#34;http://antonikowalczuk.com&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;Antoni Kowalczuk*&lt;/a&gt;,
+  &lt;a href=&#34;https://scholar.google.com/citations?user=iG319iwAAAAJ&amp;hl=pl&amp;oi=ao&#34;&gt;&lt;sup&gt;2,3&lt;/sup&gt;Jan Dubiński*&lt;/a&gt;,
+  &lt;a href=&#34;https://franziska-boenisch.de/&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;Franziska Boenisch&lt;/a&gt;,
+  &lt;a href=&#34;https://adam-dziedzic.com/&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;Adam Dziedzic&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;sup&gt;1&lt;/sup&gt;CISPA Helmholtz Center for Information Security&lt;br&gt;
+  &lt;sup&gt;2&lt;/sup&gt;Warsaw University of Technology&lt;br&gt;
+  &lt;sup&gt;3&lt;/sup&gt;IDEAS NCBR&lt;br&gt;&lt;br&gt;
+  &lt;em&gt;*Indicates Equal Contribution&lt;/em&gt;
+&lt;/center&gt;
+&lt;!-- Container that keeps buttons on one row --&gt;
+&lt;div style=&#34;
+  display: flex;               /* forces horizontal row */
+  justify-content: center;     /* center them horizontally */
+  align-items: center;         /* vertically center inside the container */
+  gap: 8px;                    /* space between buttons */
+  margin-top: 1em;             /* some spacing above, optional */
+&#34;&gt;
+  &lt;!-- Example Button 1 --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sprintml/privacy_attacks_against_iars&#34; style=&#34;
+display: inline-flex;       /* allow icon+text to align side-by-side */
+align-items: center;        /* vertically center icon+text */
+text-decoration: none;      /* remove link underline */
+background-color: #444;     /* dark pill color */
+color: #fff;                /* text/icon color */
+font-size: 14px;            /* smallish text */
+font-family: sans-serif;
+line-height: 1;             /* eliminate extra vertical space */
+padding: 4px 12px;          /* adjust pill size */
+border-radius: 9999px;      /* make it a pill shape */
+border: 1px solid #ccc;
+&#34;&gt;
+&lt;img src=&#34;../../files/github-mark-white.png&#34;
+alt=&#34;Code Icon&#34;
+style=&#34;
+width:16px; 
+height:16px;
+display: block;     /* avoids baseline alignment issues */
+margin-right:8px;
+&#34;&gt;
+Code
+&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://antonikowalczuk.com/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://antonikowalczuk.com/contact/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;span id=&#34;email&#34;&gt;&lt;/span&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  (function() {
+    
+    var user = &#34;antonikowalczuk&#34;;
+    var domain = &#34;gmail&#34;;
+    var tld = &#34;com&#34;;
+
+    
+    var email = user + &#34;@&#34; + domain + &#34;.&#34; + tld;
+
+    
+    document.getElementById(&#34;email&#34;).innerHTML = &#39;&lt;a href=&#34;mailto:&#39; + email + &#39;&#34;&gt;&#39; + email + &#39;&lt;/a&gt;&#39;;
+  })();
+&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.linkedin.com/in/antoni-kowalczuk-j3p/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/Ankowa&#34;&gt;GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?user=KQXAZdUAAAAJ&amp;amp;hl=pl&#34;&gt;Google Scholar&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Papers</title>
+      <link>https://antonikowalczuk.com/papers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://antonikowalczuk.com/papers/</guid>
+      <description>&lt;h1 id=&#34;2025&#34;&gt;2025&lt;/h1&gt;
+&lt;h2 id=&#34;finding-dori-memorization-in-text-to-image-diffusion-models-is-less-local-than-assumedhttpsarxivorgabs250716880&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2507.16880&#34;&gt;Finding Dori: Memorization in Text-to-Image Diffusion Models Is Less Local Than Assumed&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Dominik Hintersdorf*, Lukas Struppek*, Kristian Kersting, Adam Dziedzic, Franziska Boenisch&lt;/p&gt;
+&lt;h2 id=&#34;privacy-attacks-on-image-autoregressive-modelshttpsarxivorgabs250202514&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2502.02514&#34;&gt;Privacy Attacks On Image AutoRegressive Models&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Jan Dubiński*, Franziska Boenisch, Adam Dziedzic&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; ICML, 2025, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/sprintml/privacy_attacks_against_iars&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Blogpost:&lt;/strong&gt; &lt;a href=&#34;https://antonikowalczuk.com/blog/priv_iar/&#34;&gt;https://antonikowalczuk.com/blog/priv_iar/&lt;/a&gt;, &lt;a href=&#34;https://sprintml.com/2025/02/04/iars-privacy.html&#34;&gt;https://sprintml.com/2025/02/04/iars-privacy.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2024&#34;&gt;2024&lt;/h1&gt;
+&lt;h2 id=&#34;cdi-copyrighted-data-identification-in-diffusion-modelshttparxivorgabs241112858&#34;&gt;&lt;a href=&#34;http://arxiv.org/abs/2411.12858&#34;&gt;CDI: Copyrighted Data Identification in Diffusion Models&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Jan Dubiński*, &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Franziska Boenisch, Adam Dziedzic&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/sprintml/copyrighted_data_identification&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; CVPR, 2025, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

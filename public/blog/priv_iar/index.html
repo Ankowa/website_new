@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Privacy Attacks On Image AutoRegressive Models | Antoni Kowalczuk</title>
+<meta name="keywords" content="blog, paper">
+<meta name="description" content="
+  
+  Accepted to ICML 2025 (Poster)
+
+
+  Authors:
+  1Antoni Kowalczuk*,
+  2,3Jan Dubiński*,
+  1Franziska Boenisch,
+  1Adam Dziedzic
+  
+  1CISPA Helmholtz Center for Information Security
+  2Warsaw University of Technology
+  3IDEAS NCBR
+  *Indicates Equal Contribution
+
+
+
+  
+
+
+Code
+">
+<meta name="author" content="">
+<link rel="canonical" href="https://antonikowalczuk.com/blog/priv_iar/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.373c727fb3070d096c69f09ee227d45a5faacaa4399221748903419022e32a48.css" integrity="sha256-Nzxyf7MHDQlsafCe4ifUWl&#43;qyqQ5kiF0iQNBkCLjKkg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://antonikowalczuk.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://antonikowalczuk.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://antonikowalczuk.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://antonikowalczuk.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://antonikowalczuk.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://antonikowalczuk.com/blog/priv_iar/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://antonikowalczuk.com/blog/priv_iar/">
+  <meta property="og:site_name" content="Antoni Kowalczuk">
+  <meta property="og:title" content="Privacy Attacks On Image AutoRegressive Models">
+  <meta property="og:description" content=" Accepted to ICML 2025 (Poster) Authors: 1Antoni Kowalczuk*, 2,3Jan Dubiński*, 1Franziska Boenisch, 1Adam Dziedzic 1CISPA Helmholtz Center for Information Security
+2Warsaw University of Technology
+3IDEAS NCBR
+*Indicates Equal Contribution Code ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Paper">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Privacy Attacks On Image AutoRegressive Models">
+<meta name="twitter:description" content="
+  
+  Accepted to ICML 2025 (Poster)
+
+
+  Authors:
+  1Antoni Kowalczuk*,
+  2,3Jan Dubiński*,
+  1Franziska Boenisch,
+  1Adam Dziedzic
+  
+  1CISPA Helmholtz Center for Information Security
+  2Warsaw University of Technology
+  3IDEAS NCBR
+  *Indicates Equal Contribution
+
+
+
+  
+
+
+Code
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog",
+      "item": "https://antonikowalczuk.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Privacy Attacks On Image AutoRegressive Models",
+      "item": "https://antonikowalczuk.com/blog/priv_iar/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Privacy Attacks On Image AutoRegressive Models",
+  "name": "Privacy Attacks On Image AutoRegressive Models",
+  "description": " Accepted to ICML 2025 (Poster) Authors: 1Antoni Kowalczuk*, 2,3Jan Dubiński*, 1Franziska Boenisch, 1Adam Dziedzic 1CISPA Helmholtz Center for Information Security\n2Warsaw University of Technology\n3IDEAS NCBR\n*Indicates Equal Contribution Code ",
+  "keywords": [
+    "blog", "paper"
+  ],
+  "articleBody": " Accepted to ICML 2025 (Poster) Authors: 1Antoni Kowalczuk*, 2,3Jan Dubiński*, 1Franziska Boenisch, 1Adam Dziedzic 1CISPA Helmholtz Center for Information Security\n2Warsaw University of Technology\n3IDEAS NCBR\n*Indicates Equal Contribution Code arXiv ICML Poster OpenReview Privacy-utility and generation speed-performance trade-off for Image AutoRegressive Models (IARs) compared to Diffusion Models (DMs.) Abstract Image AutoRegressive generation has emerged as a new powerful paradigm with image autoregressive models (IARs) surpassing state-of-the-art diffusion models (DMs) in both image quality (FID: 1.48 vs. 1.58) and generation speed. However, the privacy risks associated with IARs remain unexplored, raising concerns regard- ing their responsible deployment. To address this gap, we conduct a comprehensive privacy analysis of IARs, comparing their privacy risks to the ones of DMs as reference points. Concretely, we develop a novel membership inference attack (MIA) that achieves a remarkably high success rate in detecting training images (with a TPR@FPR=1% of 86.38% vs. 4.91% for DMs with comparable attacks). We leverage our novel MIA to provide dataset inference (DI) for IARs, and show that it requires as few as 6 samples to detect dataset membership (compared to 200 for DI in DMs), confirming a higher information leakage in IARs. Finally, we are able to extract hundreds of training data points from an IAR (e.g., 698 from VAR-d30). Our results demonstrate a fundamental privacy-utility trade-off: while IARs excel in image generation quality and speed, they are significantly more vulnerable to privacy attacks compared to DMs. This trend suggests that utilizing techniques from DMs within IARs, such as modeling the per-token probability distribution using a diffusion procedure, holds potential to help mitigating IARs’ vulnerability to privacy attacks. Contributions Our new MIA for IARs achieves extremely strong performance of even 86.38% TPR@FPR, improving over naive application of MIAs by up to 69%. We provide a potent DI method for IARs, which requires as few as 6 samples to assess dataset membership signal. We propose an efficient method of training data extraction from IARs, and successfully extract up to 698 images. IARs outperform DMs in generation efficiency and quality but suffer order-of-magnitude higher privacy leakage compared to them in MIAs, DI, and data extraction. Membership Inference Attacks Results Model VAR-d16 VAR-d20 VAR-d24 VAR-d30 MAR-B MAR-L MAR-H RAR-B RAR-L RAR-XL RAR-XXL Baselines 1.62 2.21 3.72 16.68 1.69 1.89 2.18 2.36 3.25 6.27 14.62 Our Methods 2.16 5.95 24.03 86.38 2.09 2.61 3.40 4.30 8.66 26.14 49.80 Improvement +0.54 +3.73 +20.30 +69.69 +0.40 +0.73 +1.22 +1.94 +5.41 +19.87 +35.17 We improve over baseline Membership Inference Attacks by up to 69.69% for VAR-d30.\nDataset Inference Results Model VAR-d16 VAR-d20 VAR-d24 VAR-d30 MAR-B MAR-L MAR-H RAR-B RAR-L RAR-XL RAR-XXL Baseline 2000 300 60 20 5000 2000 900 500 200 40 30 +Optimized Procedure 600 200 40 8 4000 2000 800 300 80 30 10 Improvement -1400 -100 -20 -12 -1000 0 -100 -200 -120 -10 -20 +Our MIAs for IARs 200 40 20 6 2000 600 300 80 30 20 8 Improvement -400 -160 -20 -2 -2000 -1400 -500 -220 -50 -10 -2 Data Extraction We successfully perform data extraction attack against IARs, extracting up to 698 images. We extract 698 images for VAR-d30, 5 images for MAR-H, and 36 images for RAR-XXL.\nExtracted Training Samples. IARs can reconstruct verbatim images from their training data. The first row shows the original training samples, and the second presents the extracted images. Bibtex @InProceedings{kowalczuk2025privacy, title = {Privacy Attacks on Image {A}uto{R}egressive Models}, author = {Kowalczuk, Antoni and Dubi\\'{n}ski, Jan and Boenisch, Franziska and Dziedzic, Adam}, booktitle = {Proceedings of the 42nd International Conference on Machine Learning}, pages = {31667--31695}, year = {2025}, volume = {267}, series = {Proceedings of Machine Learning Research}, month = {13--19 Jul}, publisher = {PMLR}, pdf = {https://raw.githubusercontent.com/mlresearch/v267/main/assets/kowalczuk25a/kowalczuk25a.pdf}, url = {https://proceedings.mlr.press/v267/kowalczuk25a.html}, } ",
+  "wordCount" : "620",
+  "inLanguage": "en",
+  "datePublished": "2025-02-05T00:00:00Z",
+  "dateModified": "2025-02-05T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://antonikowalczuk.com/blog/priv_iar/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Antoni Kowalczuk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://antonikowalczuk.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" paper" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://antonikowalczuk.com/" accesskey="h" title="Antoni Kowalczuk (Alt + H)">Antoni Kowalczuk</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://antonikowalczuk.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://antonikowalczuk.com/papers/" title="Papers">
+                    <span>Papers</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://antonikowalczuk.com/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://antonikowalczuk.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Privacy Attacks On Image AutoRegressive Models
+    </h1>
+    <div class="post-meta"><span title='2025-02-05 00:00:00 +0000 UTC'>February 5, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#abstract" aria-label="Abstract">Abstract</a></li>
+                <li>
+                    <a href="#contributions" aria-label="Contributions">Contributions</a></li>
+                <li>
+                    <a href="#membership-inference-attacks-results" aria-label="Membership Inference Attacks Results">Membership Inference Attacks Results</a></li>
+                <li>
+                    <a href="#dataset-inference-results" aria-label="Dataset Inference Results">Dataset Inference Results</a></li>
+                <li>
+                    <a href="#data-extraction" aria-label="Data Extraction">Data Extraction</a></li>
+                <li>
+                    <a href="#bibtex" aria-label="Bibtex">Bibtex</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+">
+  <img src="../../files/priv_iar/ICML-logo.svg" 
+       alt="ICML Logo" 
+       style="height: 50px; width: auto; background-color: white;" />
+  <span style="
+    font-size: 40px; 
+    font-weight: bold; 
+    font-family: sans-serif; 
+  ">Accepted to ICML 2025 (Poster)</span>
+</div>
+<center>
+  <strong>Authors:</strong>
+  <a href="http://antonikowalczuk.com"><sup>1</sup>Antoni Kowalczuk*</a>,
+  <a href="https://scholar.google.com/citations?user=iG319iwAAAAJ&hl=pl&oi=ao"><sup>2,3</sup>Jan Dubiński*</a>,
+  <a href="https://franziska-boenisch.de/"><sup>1</sup>Franziska Boenisch</a>,
+  <a href="https://adam-dziedzic.com/"><sup>1</sup>Adam Dziedzic</a>
+  <br><br>
+  <sup>1</sup>CISPA Helmholtz Center for Information Security<br>
+  <sup>2</sup>Warsaw University of Technology<br>
+  <sup>3</sup>IDEAS NCBR<br><br>
+  <em>*Indicates Equal Contribution</em>
+</center>
+<!-- Container that keeps buttons on one row -->
+<div style="
+  display: flex;               /* forces horizontal row */
+  justify-content: center;     /* center them horizontally */
+  align-items: center;         /* vertically center inside the container */
+  gap: 8px;                    /* space between buttons */
+  margin-top: 1em;             /* some spacing above, optional */
+">
+  <!-- Example Button 1 -->
+<p><a href="https://github.com/sprintml/privacy_attacks_against_iars" style="
+display: inline-flex;       /* allow icon+text to align side-by-side */
+align-items: center;        /* vertically center icon+text */
+text-decoration: none;      /* remove link underline */
+background-color: #444;     /* dark pill color */
+color: #fff;                /* text/icon color */
+font-size: 14px;            /* smallish text */
+font-family: sans-serif;
+line-height: 1;             /* eliminate extra vertical space */
+padding: 4px 12px;          /* adjust pill size */
+border-radius: 9999px;      /* make it a pill shape */
+border: 1px solid #ccc;
+">
+<img src="../../files/github-mark-white.png"
+alt="Code Icon"
+style="
+width:16px; 
+height:16px;
+display: block;     /* avoids baseline alignment issues */
+margin-right:8px;
+">
+Code
+</a></p>
+  <!-- Example Button 2 -->
+<p><a href="https://arxiv.org/abs/2502.02514" style="
+display: inline-flex;
+align-items: center;
+text-decoration: none;
+background-color: #444;
+color: #fff;
+font-size: 14px;
+font-family: sans-serif;
+line-height: 1;
+padding: 4px 12px;
+border-radius: 9999px;
+border: 1px solid #ccc;
+">
+<img src="../../files/arxiv.png"
+alt="arXiv Icon"
+style="
+width:16px; 
+height:16px;
+display: block;
+margin-right:8px;
+">
+arXiv
+</a></p>
+  <!-- Example Button 2 -->
+<p><a href="https://icml.cc/virtual/2025/poster/46325" style="
+display: inline-flex;
+align-items: center;
+text-decoration: none;
+background-color: #444;
+color: #fff;
+font-size: 14px;
+font-family: sans-serif;
+line-height: 1;
+padding: 4px 12px;
+border-radius: 9999px;
+border: 1px solid #ccc;
+">
+<img src="../../files/priv_iar/icml-navbar-logo.svg"
+alt="ICML Icon"
+style="
+width:16px; 
+height:16px;
+display: block;
+margin-right:8px;
+/* background-color: white; */
+">
+ICML Poster
+</a></p>
+  <!-- Add more buttons as needed... -->
+  <!-- Example Button 2 -->
+<p><a href="https://openreview.net/forum?id=7SXXczJCWP" style="
+display: inline-flex;
+align-items: center;
+text-decoration: none;
+background-color: #444;
+color: #fff;
+font-size: 14px;
+font-family: sans-serif;
+line-height: 1;
+padding: 4px 12px;
+border-radius: 9999px;
+border: 1px solid #ccc;
+">
+<img src="../../files/openreview_logo.png"
+alt="OpenReview Icon"
+style="
+width:16px; 
+height:16px;
+display: block;
+margin-right:8px;
+/* background-color: white; */
+">
+OpenReview
+</a></p>
+  <!-- Add more buttons as needed... -->
+</div>
+<figure style="margin: 0 auto; width: 100%;">
+  <!-- PNG image -->
+  <img src="../../files/priv_iar/pareto_teaser.png" alt="Descriptive alternate text" style="display: block; width: 100%; height: auto;" />
+  <!-- Caption below the image, justified -->
+  <figcaption style="text-align: justify; margin-top: 8px;">
+    <b>Privacy-utility and generation speed-performance trade-off for Image AutoRegressive Models (IARs) compared to Diffusion Models (DMs.)</b>
+  </figcaption>
+</figure>
+<h2 id="abstract">Abstract<a hidden class="anchor" aria-hidden="true" href="#abstract">#</a></h2>
+<div style="text-align: justify">Image AutoRegressive generation has emerged as a new powerful paradigm with
+image autoregressive models (IARs) surpassing state-of-the-art diffusion models
+(DMs) in both image quality (FID: 1.48 vs. 1.58) and generation speed. However,
+the privacy risks associated with IARs remain unexplored, raising concerns regard-
+ing their responsible deployment. To address this gap, we conduct a comprehensive
+privacy analysis of IARs, comparing their privacy risks to the ones of DMs as
+reference points. Concretely, we develop a novel membership inference attack
+(MIA) that achieves a remarkably high success rate in detecting training images
+(with a TPR@FPR=1% of 86.38% vs. 4.91% for DMs with comparable attacks).
+We leverage our novel MIA to provide dataset inference (DI) for IARs, and show
+that it requires as few as 6 samples to detect dataset membership (compared to
+200 for DI in DMs), confirming a higher information leakage in IARs. Finally, we
+are able to extract hundreds of training data points from an IAR (e.g., 698 from
+VAR-<i>d</i>30). Our results demonstrate a fundamental privacy-utility trade-off: while
+IARs excel in image generation quality and speed, they are significantly more
+vulnerable to privacy attacks compared to DMs. This trend suggests that utilizing
+techniques from DMs within IARs, such as modeling the per-token probability
+distribution using a diffusion procedure, holds potential to help mitigating IARs’
+vulnerability to privacy attacks.
+</div>
+<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+<ul>
+<li>
+  Our new MIA for IARs achieves extremely strong performance of even <strong>86.38%</strong> TPR@FPR, improving over naive application of MIAs by up to <strong>69%</strong>.
+</li>
+<li>
+  We provide a potent DI method for IARs, which requires as few as <strong>6</strong> samples to assess dataset membership signal.
+</li>
+<li>
+  We propose an efficient method of training data extraction from IARs, and successfully extract up to <strong>698</strong> images.
+</li>
+<li>
+  IARs outperform DMs in generation efficiency and quality but suffer <strong>order-of-magnitude</strong> higher privacy leakage compared to them in MIAs, DI, and data extraction.
+</li>
+</ul>
+<h2 id="membership-inference-attacks-results">Membership Inference Attacks Results<a hidden class="anchor" aria-hidden="true" href="#membership-inference-attacks-results">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Model</strong></th>
+          <th><strong>VAR-<em>d</em>16</strong></th>
+          <th><strong>VAR-<em>d</em>20</strong></th>
+          <th><strong>VAR-<em>d</em>24</strong></th>
+          <th><strong>VAR-<em>d</em>30</strong></th>
+          <th><strong>MAR-B</strong></th>
+          <th><strong>MAR-L</strong></th>
+          <th><strong>MAR-H</strong></th>
+          <th><strong>RAR-B</strong></th>
+          <th><strong>RAR-L</strong></th>
+          <th><strong>RAR-XL</strong></th>
+          <th><strong>RAR-XXL</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Baselines</td>
+          <td>1.62</td>
+          <td>2.21</td>
+          <td>3.72</td>
+          <td>16.68</td>
+          <td>1.69</td>
+          <td>1.89</td>
+          <td>2.18</td>
+          <td>2.36</td>
+          <td>3.25</td>
+          <td>6.27</td>
+          <td>14.62</td>
+      </tr>
+      <tr>
+          <td>Our Methods</td>
+          <td><strong>2.16</strong></td>
+          <td><strong>5.95</strong></td>
+          <td><strong>24.03</strong></td>
+          <td><strong>86.38</strong></td>
+          <td><strong>2.09</strong></td>
+          <td><strong>2.61</strong></td>
+          <td><strong>3.40</strong></td>
+          <td><strong>4.30</strong></td>
+          <td><strong>8.66</strong></td>
+          <td><strong>26.14</strong></td>
+          <td><strong>49.80</strong></td>
+      </tr>
+      <tr>
+          <td>Improvement</td>
+          <td><strong>+0.54</strong></td>
+          <td><strong>+3.73</strong></td>
+          <td><strong>+20.30</strong></td>
+          <td><strong>+69.69</strong></td>
+          <td><strong>+0.40</strong></td>
+          <td><strong>+0.73</strong></td>
+          <td><strong>+1.22</strong></td>
+          <td><strong>+1.94</strong></td>
+          <td><strong>+5.41</strong></td>
+          <td><strong>+19.87</strong></td>
+          <td><strong>+35.17</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>We improve over baseline Membership Inference Attacks by up to <strong>69.69%</strong> for VAR-<em>d</em>30.</p>
+<h2 id="dataset-inference-results">Dataset Inference Results<a hidden class="anchor" aria-hidden="true" href="#dataset-inference-results">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Model</strong></th>
+          <th><strong>VAR-<em>d</em>16</strong></th>
+          <th><strong>VAR-<em>d</em>20</strong></th>
+          <th><strong>VAR-<em>d</em>24</strong></th>
+          <th><strong>VAR-<em>d</em>30</strong></th>
+          <th><strong>MAR-B</strong></th>
+          <th><strong>MAR-L</strong></th>
+          <th><strong>MAR-H</strong></th>
+          <th><strong>RAR-B</strong></th>
+          <th><strong>RAR-L</strong></th>
+          <th><strong>RAR-XL</strong></th>
+          <th><strong>RAR-XXL</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Baseline</td>
+          <td>2000</td>
+          <td>300</td>
+          <td>60</td>
+          <td>20</td>
+          <td>5000</td>
+          <td>2000</td>
+          <td>900</td>
+          <td>500</td>
+          <td>200</td>
+          <td>40</td>
+          <td>30</td>
+      </tr>
+      <tr>
+          <td>+Optimized Procedure</td>
+          <td>600</td>
+          <td>200</td>
+          <td>40</td>
+          <td>8</td>
+          <td>4000</td>
+          <td>2000</td>
+          <td>800</td>
+          <td>300</td>
+          <td>80</td>
+          <td>30</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td>Improvement</td>
+          <td>-1400</td>
+          <td>-100</td>
+          <td>-20</td>
+          <td>-12</td>
+          <td>-1000</td>
+          <td>0</td>
+          <td>-100</td>
+          <td>-200</td>
+          <td>-120</td>
+          <td>-10</td>
+          <td>-20</td>
+      </tr>
+      <tr>
+          <td>+Our MIAs for IARs</td>
+          <td><strong>200</strong></td>
+          <td><strong>40</strong></td>
+          <td><strong>20</strong></td>
+          <td><strong>6</strong></td>
+          <td><strong>2000</strong></td>
+          <td><strong>600</strong></td>
+          <td><strong>300</strong></td>
+          <td><strong>80</strong></td>
+          <td><strong>30</strong></td>
+          <td><strong>20</strong></td>
+          <td><strong>8</strong></td>
+      </tr>
+      <tr>
+          <td>Improvement</td>
+          <td>-400</td>
+          <td>-160</td>
+          <td>-20</td>
+          <td>-2</td>
+          <td>-2000</td>
+          <td>-1400</td>
+          <td>-500</td>
+          <td>-220</td>
+          <td>-50</td>
+          <td>-10</td>
+          <td>-2</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="data-extraction">Data Extraction<a hidden class="anchor" aria-hidden="true" href="#data-extraction">#</a></h2>
+<p>We successfully perform data extraction attack against IARs, extracting up to <strong>698</strong> images. We extract <strong>698</strong> images for VAR-<em>d</em>30, <strong>5</strong> images for MAR-H, and <strong>36</strong> images for RAR-XXL.</p>
+<figure style="margin: 0 auto; width: 80%;">
+  <!-- PNG image -->
+  <img src="../../files/priv_iar/mem_teaser.png" alt="Descriptive alternate text" style="display: block; width: 100%; height: auto;" />
+  <!-- Caption below the image, justified -->
+  <figcaption style="text-align: justify; margin-top: 8px;">
+    <b>Extracted Training Samples. IARs can reconstruct verbatim images from their training data. The first row shows the original training samples, and the second presents the extracted images.</b>
+  </figcaption>
+</figure>
+<h2 id="bibtex">Bibtex<a hidden class="anchor" aria-hidden="true" href="#bibtex">#</a></h2>
+<pre tabindex="0"><code>@InProceedings{kowalczuk2025privacy,
+  title = 	 {Privacy Attacks on Image {A}uto{R}egressive Models},
+  author =       {Kowalczuk, Antoni and Dubi\&#39;{n}ski, Jan and Boenisch, Franziska and Dziedzic, Adam},
+  booktitle = 	 {Proceedings of the 42nd International Conference on Machine Learning},
+  pages = 	 {31667--31695},
+  year = 	 {2025},
+  volume = 	 {267},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {13--19 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v267/main/assets/kowalczuk25a/kowalczuk25a.pdf},
+  url = 	 {https://proceedings.mlr.press/v267/kowalczuk25a.html},
+}
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://antonikowalczuk.com/tags/blog/">Blog</a></li>
+      <li><a href="https://antonikowalczuk.com/tags/paper/">Paper</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://antonikowalczuk.com/">Antoni Kowalczuk</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

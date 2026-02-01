@@ -1,0 +1,11 @@
+/* Increase the overall base font size */
+body {
+  font-size: 18px !important;
+}
+
+/* If you only want to change the font size on blog posts,
+   you might target a specific container.
+   For example, if your blog posts have a class like .post-content: */
+.post-content {
+  font-size: 18px !important;
+}

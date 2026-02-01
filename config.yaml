@@ -1,0 +1,36 @@
+baseURL: "https://antonikowalczuk.com" # Replace with your actual domain
+languageCode: "en-us"
+title: "Antoni Kowalczuk"
+theme: "PaperMod"
+
+# PaperMod specific settings
+params:
+  themeVariant: "auto" # Can be auto, light, or dark
+  disableKinds:
+    - "taxonomy"
+    - "taxonomyTerm"
+  enableGitInfo: true # Show last updated
+  showReadingTime: true
+  disableShare: true # Disable social media share icons
+  showToc: true # Show table of contents on posts
+  math: true
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Papers"
+      url: "/papers/"
+      weight: 2
+    - name: "Blog"
+      url: "/blog/"
+      weight: 3
+    - name: "Contact"
+      url: "/contact/"
+      weight: 4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
