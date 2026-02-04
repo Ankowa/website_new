@@ -209,7 +209,7 @@ vulnerability to privacy attacks.
 | Our Methods | **3.05**             | **9.26**             | **25.39**            | **94.57**            | **2.09**  | **2.61**  | **3.40**  | **4.30**  | **8.66**  | **26.14**  | **49.80**   |
 | Improvement | **+1.43**            | **+7.05**            | **+21.67**           | **+77.89**           | **+0.40** | **+0.73** | **+1.22** | **+1.94** | **+5.41** | **+19.87** | **+35.17**  |
 
-We improve over baseline Membership Inference Attacks by up to **69.69%** for VAR-*d*30. 
+We improve over baseline Membership Inference Attacks by up to **77.89%** for VAR-*d*30. 
 
 ## Dataset Inference Results
 
