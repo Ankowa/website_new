@@ -37082,3 +37082,6 @@ To github.com:Ankowa/website.git
  2 files changed, 15 insertions(+)
 To github.com:Ankowa/website.git
    97358645..d48acbd6  main -> main
+/bin/sh: 1: /var/www/antonikowalczuk/backup.sh: Permission denied
+/bin/sh: 1: /var/www/antonikowalczuk/backup.sh: Permission denied
+/bin/sh: 1: /var/www/antonikowalczuk/backup.sh: Permission denied

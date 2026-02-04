@@ -1,7 +1,7 @@
 #!/bin/bash
 # Define the repository directory and branch name
-REPO_DIR="/root/website"   # <-- Replace with your repository path
-BRANCH="main"                  # <-- Replace with your branch name if different
+REPO_DIR="/var/www/antonikowalczuk"   # <-- Replace with your repository path
+BRANCH="master"                  # <-- Replace with your branch name if different
 
 # Change to the repository directory or exit if it doesn't exist
 cd "$REPO_DIR" || { echo "Repository directory not found: $REPO_DIR"; exit 1; }
