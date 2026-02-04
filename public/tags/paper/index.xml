@@ -21,14 +21,14 @@
   margin-bottom: 25px;
   margin-top: 10px;
 &#34;&gt;
-  &lt;img src=&#34;../../files/priv_iar/ICML-logo.svg&#34; 
-       alt=&#34;ICML Logo&#34; 
-       style=&#34;height: 50px; width: auto; background-color: white;&#34; /&gt;
   &lt;span style=&#34;
     font-size: 40px; 
     font-weight: bold; 
     font-family: sans-serif; 
   &#34;&gt;Accepted to ICML 2025 (Poster)&lt;/span&gt;
+  &lt;img src=&#34;../../files/priv_iar/ICML-logo.svg&#34; 
+       alt=&#34;ICML Logo&#34; 
+       style=&#34;height: 50px; width: auto; background-color: white;&#34; /&gt;
 &lt;/div&gt;
 &lt;center&gt;
   &lt;strong&gt;Authors:&lt;/strong&gt;

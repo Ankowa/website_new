@@ -13,14 +13,14 @@ date: "2025-02-05"
   margin-bottom: 25px;
   margin-top: 10px;
 ">
-  <img src="../../files/priv_iar/ICML-logo.svg" 
-       alt="ICML Logo" 
-       style="height: 50px; width: auto; background-color: white;" />
   <span style="
     font-size: 40px; 
     font-weight: bold; 
     font-family: sans-serif; 
   ">Accepted to ICML 2025 (Poster)</span>
+  <img src="../../files/priv_iar/ICML-logo.svg" 
+       alt="ICML Logo" 
+       style="height: 50px; width: auto; background-color: white;" />
 </div>
 
 <center>
@@ -171,9 +171,9 @@ ing their responsible deployment. To address this gap, we conduct a comprehensiv
 privacy analysis of IARs, comparing their privacy risks to the ones of DMs as
 reference points. Concretely, we develop a novel membership inference attack
 (MIA) that achieves a remarkably high success rate in detecting training images
-(with a TPR@FPR=1% of 86.38% vs. 4.91% for DMs with comparable attacks).
+(with a TPR@FPR=1% of 94.57% vs. 6.38% for DMs with comparable attacks).
 We leverage our novel MIA to provide dataset inference (DI) for IARs, and show
-that it requires as few as 6 samples to detect dataset membership (compared to
+that it requires as few as 4 samples to detect dataset membership (compared to
 200 for DI in DMs), confirming a higher information leakage in IARs. Finally, we
 are able to extract hundreds of training data points from an IAR (e.g., 698 from
 VAR-<i>d</i>30). Our results demonstrate a fundamental privacy-utility trade-off: while
@@ -188,10 +188,10 @@ vulnerability to privacy attacks.
 
 <ul>
 <li>
-  Our new MIA for IARs achieves extremely strong performance of even <strong>86.38%</strong> TPR@FPR, improving over naive application of MIAs by up to <strong>69%</strong>.
+  Our new MIA for IARs achieves extremely strong performance of even <strong>94.57%</strong> TPR@FPR, improving over naive application of MIAs by up to <strong>77%</strong>.
 </li>
 <li>
-  We provide a potent DI method for IARs, which requires as few as <strong>6</strong> samples to assess dataset membership signal.
+  We provide a potent DI method for IARs, which requires as few as <strong>4</strong> samples to assess dataset membership signal.
 </li>
 <li>
   We propose an efficient method of training data extraction from IARs, and successfully extract up to <strong>698</strong> images.
@@ -206,8 +206,8 @@ vulnerability to privacy attacks.
 | **Model**   | **VAR-*d*16** | **VAR-*d*20** | **VAR-*d*24** | **VAR-*d*30** | **MAR-B** | **MAR-L** | **MAR-H** | **RAR-B** | **RAR-L** | **RAR-XL** | **RAR-XXL** |
 |-------------|----------------------|----------------------|----------------------|----------------------|-----------|-----------|-----------|-----------|-----------|------------|-------------|
 | Baselines   | 1.62                 | 2.21                 | 3.72                 | 16.68                | 1.69      | 1.89      | 2.18      | 2.36      | 3.25      | 6.27       | 14.62       |
-| Our Methods | **2.16**             | **5.95**             | **24.03**            | **86.38**            | **2.09**  | **2.61**  | **3.40**  | **4.30**  | **8.66**  | **26.14**  | **49.80**   |
-| Improvement | **+0.54**            | **+3.73**            | **+20.30**           | **+69.69**           | **+0.40** | **+0.73** | **+1.22** | **+1.94** | **+5.41** | **+19.87** | **+35.17**  |
+| Our Methods | **3.05**             | **9.26**             | **25.39**            | **94.57**            | **2.09**  | **2.61**  | **3.40**  | **4.30**  | **8.66**  | **26.14**  | **49.80**   |
+| Improvement | **+1.43**            | **+7.05**            | **+21.67**           | **+77.89**           | **+0.40** | **+0.73** | **+1.22** | **+1.94** | **+5.41** | **+19.87** | **+35.17**  |
 
 We improve over baseline Membership Inference Attacks by up to **69.69%** for VAR-*d*30. 
 
@@ -218,8 +218,8 @@ We improve over baseline Membership Inference Attacks by up to **69.69%** for VA
 | Baseline             | 2000          | 300           | 60            | 20            | 5000      | 2000      | 900       | 500       | 200       | 40         | 30          |
 | +Optimized Procedure | 600           | 200           | 40            | 8             | 4000      | 2000      | 800       | 300       | 80        | 30         | 10          |
 | Improvement          | -1400         | -100          | -20           | -12           | -1000     | 0         | -100      | -200      | -120      | -10        | -20         |
-| +Our MIAs for IARs   | **200**       | **40**        | **20**        | **6**         | **2000**  | **600**   | **300**   | **80**    | **30**    | **20**     | **8**       |
-| Improvement          | -400          | -160          | -20           | -2            | -2000     | -1400     | -500      | -220      | -50       | -10        | -2          |
+| +Our MIAs for IARs   | **100**       | **20**        | **7**        | **4**         | **2000**  | **600**   | **300**   | **80**    | **30**    | **20**     | **8**       |
+| Improvement          | -500          | -180          | -33           | -4            | -2000     | -1400     | -500      | -220      | -50       | -10        | -2          |
 
 ## Data Extraction
 
@@ -252,3 +252,6 @@ We successfully perform data extraction attack against IARs, extracting up to **
   url = 	 {https://proceedings.mlr.press/v267/kowalczuk25a.html},
 }
 ```
+## Acknowledgment 
+
+We would like to thank Bihe Zhao for identifying a configuration issue in our VAR experiments.
