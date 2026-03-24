@@ -37248,3 +37248,8 @@ To github.com:Ankowa/website_new.git
  1 file changed, 4 insertions(+)
 To github.com:Ankowa/website_new.git
    eafbeac..3891e4f  master -> master
+[master dd8b1bf] Auto-backup commit on Tue 24 Mar 2026 12:00:01 AM CET
+ 2 files changed, 20 insertions(+), 67 deletions(-)
+ rewrite archetypes/draft.md (99%)
+To github.com:Ankowa/website_new.git
+   3891e4f..dd8b1bf  master -> master
