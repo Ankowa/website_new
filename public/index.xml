@@ -126,6 +126,7 @@ Code
       <description>&lt;h1 id=&#34;2025&#34;&gt;2025&lt;/h1&gt;
 &lt;h2 id=&#34;finding-dori-memorization-in-text-to-image-diffusion-models-is-less-local-than-assumedhttpsarxivorgabs250716880&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2507.16880&#34;&gt;Finding Dori: Memorization in Text-to-Image Diffusion Models Is Less Local Than Assumed&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Dominik Hintersdorf*, Lukas Struppek*, Kristian Kersting, Adam Dziedzic, Franziska Boenisch&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; ICML, 2026, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;privacy-attacks-on-image-autoregressive-modelshttpsarxivorgabs250202514&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2502.02514&#34;&gt;Privacy Attacks On Image AutoRegressive Models&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Jan Dubiński*, Franziska Boenisch, Adam Dziedzic&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; ICML, 2025, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;
@@ -134,8 +135,7 @@ Code
 &lt;h1 id=&#34;2024&#34;&gt;2024&lt;/h1&gt;
 &lt;h2 id=&#34;cdi-copyrighted-data-identification-in-diffusion-modelshttparxivorgabs241112858&#34;&gt;&lt;a href=&#34;http://arxiv.org/abs/2411.12858&#34;&gt;CDI: Copyrighted Data Identification in Diffusion Models&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Jan Dubiński*, &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Franziska Boenisch, Adam Dziedzic&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/sprintml/copyrighted_data_identification&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; CVPR, 2025, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/sprintml/copyrighted_data_identification&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -8,6 +8,8 @@ title: "Papers"
 
 **Authors:** **Antoni Kowalczuk**\*, Dominik Hintersdorf\*, Lukas Struppek\*, Kristian Kersting, Adam Dziedzic, Franziska Boenisch
 
+**Venue:** ICML, 2026, *Poster*
+
 ## [Privacy Attacks On Image AutoRegressive Models](https://arxiv.org/abs/2502.02514)
 
 **Authors:** **Antoni Kowalczuk**\*, Jan Dubiński\*, Franziska Boenisch, Adam Dziedzic
