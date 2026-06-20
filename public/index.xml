@@ -124,9 +124,10 @@ Code
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://antonikowalczuk.com/papers/</guid>
       <description>&lt;h1 id=&#34;2025&#34;&gt;2025&lt;/h1&gt;
-&lt;h2 id=&#34;finding-dori-memorization-in-text-to-image-diffusion-models-is-less-local-than-assumedhttpsarxivorgabs250716880&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2507.16880&#34;&gt;Finding Dori: Memorization in Text-to-Image Diffusion Models Is Less Local Than Assumed&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;finding-dori-discovery-of-retained-images-in-diffusion-modelshttpsarxivorgabs250716880&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2507.16880&#34;&gt;Finding DoRI: Discovery of Retained Images in Diffusion Models&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Dominik Hintersdorf*, Lukas Struppek*, Kristian Kersting, Adam Dziedzic, Franziska Boenisch&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; ICML, 2026, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/sprintml/finding_dori&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;privacy-attacks-on-image-autoregressive-modelshttpsarxivorgabs250202514&#34;&gt;&lt;a href=&#34;https://arxiv.org/abs/2502.02514&#34;&gt;Privacy Attacks On Image AutoRegressive Models&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; &lt;strong&gt;Antoni Kowalczuk&lt;/strong&gt;*, Jan Dubiński*, Franziska Boenisch, Adam Dziedzic&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; ICML, 2025, &lt;em&gt;Poster&lt;/em&gt;&lt;/p&gt;

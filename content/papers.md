@@ -4,11 +4,13 @@ title: "Papers"
 
 # 2025
 
-## [Finding Dori: Memorization in Text-to-Image Diffusion Models Is Less Local Than Assumed](https://arxiv.org/abs/2507.16880)
+## [Finding DoRI: Discovery of Retained Images in Diffusion Models](https://arxiv.org/abs/2507.16880)
 
 **Authors:** **Antoni Kowalczuk**\*, Dominik Hintersdorf\*, Lukas Struppek\*, Kristian Kersting, Adam Dziedzic, Franziska Boenisch
 
 **Venue:** ICML, 2026, *Poster*
+
+**Code:** [GitHub Repository](https://github.com/sprintml/finding_dori)
 
 ## [Privacy Attacks On Image AutoRegressive Models](https://arxiv.org/abs/2502.02514)
 
