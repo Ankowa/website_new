@@ -37853,3 +37853,9 @@ To github.com:Ankowa/website_new.git
  1 file changed, 4 insertions(+)
 To github.com:Ankowa/website_new.git
    cfbaa18..433c14b  master -> master
+[master 84b7994] Auto-backup commit on Mon 17 Aug 2026 12:00:01 AM CEST
+ 1 file changed, 4 insertions(+)
+To github.com:Ankowa/website_new.git
+   433c14b..84b7994  master -> master
+error: could not lock config file /root/.gitconfig: File exists
+error: could not lock config file /root/.gitconfig: File exists
