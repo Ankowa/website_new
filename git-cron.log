@@ -38264,3 +38264,12 @@ To github.com:Ankowa/website_new.git
  1 file changed, 4 insertions(+)
 To github.com:Ankowa/website_new.git
    9fa7e67..3998a16  master -> master
+[master 2783ea8] Auto-backup commit on Wed 25 Nov 2026 12:00:01 AM CET
+ 1 file changed, 4 insertions(+)
+remote: Internal Server Error
+remote: Request ID 821C:3204E3:600FDA:63F41D:6B0616F1        
+remote: Time 2026-11-24T23:00:03Z
+To github.com:Ankowa/website_new.git
+ ! [remote rejected] master -> master (Internal Server Error)
+error: failed to push some refs to 'git@github.com:Ankowa/website_new.git'
+error: could not lock config file /root/.gitconfig: File exists
